@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ecosistema de Seguridad — Data &amp; Apps</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#101c2e;
+    --panel:#16233a;
+    --edge:#2a3c58;
+    --sand:#e8b75d;
+    --teal:#4fa79b;
+    --paper:#f3f1ea;
+    --muted:#9fb0c9;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ink);
+    color:var(--paper);
+    font-family:'Inter',sans-serif;
+    line-height:1.55;
+  }
+  h1,h2,h3,.mono-num{font-family:'Space Grotesk',sans-serif;}
+  a{color:inherit;}
+  .wrap{max-width:960px;margin:0 auto;padding:0 24px;}
+
+  header{
+    position:sticky;top:0;z-index:10;
+    background:rgba(16,28,46,0.9);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--edge);
+  }
+  header .wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-top:16px;padding-bottom:16px;
+  }
+  .brand{font-weight:700;font-size:1.05rem;letter-spacing:0.01em;}
+  .brand span{color:var(--sand);}
+  nav ul{list-style:none;display:flex;gap:22px;}
+  nav a{font-size:0.92rem;color:var(--muted);text-decoration:none;}
+  nav a:hover{color:var(--paper);}
+
+  .hero{padding:96px 0 72px;}
+  .hero .kicker{color:var(--teal);font-size:0.95rem;margin-bottom:14px;}
+  .hero h1{
+    font-size:clamp(2.1rem,5vw,3.4rem);
+    font-weight:700;
+    line-height:1.12;
+    max-width:16ch;
+  }
+  .hero p{
+    margin-top:22px;max-width:56ch;color:var(--muted);font-size:1.08rem;
+  }
+  .hero .tag{
+    display:inline-block;margin-top:32px;padding:9px 16px;
+    border:1px solid var(--edge);border-radius:3px;font-size:0.88rem;color:var(--muted);
+  }
+
+  section.pillar{
+    padding:64px 0;border-top:1px solid var(--edge);
+  }
+  .pillar .head{display:flex;gap:20px;align-items:baseline;margin-bottom:18px;}
+  .pillar .mono-num{font-size:1rem;color:var(--sand);min-width:28px;}
+  .pillar h2{font-size:1.7rem;font-weight:500;}
+  .pillar .lede{color:var(--muted);max-width:60ch;margin-bottom:26px;}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;}
+  .card{
+    background:var(--panel);border:1px solid var(--edge);border-radius:4px;
+    padding:20px 22px;
+  }
+  .card h3{font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--paper);}
+  .card p{font-size:0.94rem;color:var(--muted);}
+
+  .cycle{padding:72px 0;border-top:1px solid var(--edge);}
+  .cycle h2{font-size:1.7rem;font-weight:500;margin-bottom:16px;}
+  .cycle p{color:var(--muted);max-width:60ch;margin-bottom:14px;}
+  .flow{
+    display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:24px;
+  }
+  .flow .step{
+    background:var(--panel);border:1px solid var(--edge);border-radius:3px;
+    padding:8px 14px;font-size:0.88rem;color:var(--paper);
+  }
+  .flow .sep{color:var(--sand);}
+
+  form.contact{
+    margin-top:28px;display:grid;gap:12px;max-width:420px;
+  }
+  form.contact input,form.contact textarea{
+    background:var(--panel);border:1px solid var(--edge);border-radius:3px;
+    padding:11px 12px;color:var(--paper);font-family:inherit;font-size:0.94rem;
+  }
+  form.contact button{
+    background:var(--sand);color:var(--ink);border:none;border-radius:3px;
+    padding:11px 16px;font-weight:600;cursor:pointer;font-size:0.94rem;
+    width:fit-content;
+  }
+
+  footer{
+    border-top:1px solid var(--edge);padding:32px 0 48px;
+    color:var(--muted);font-size:0.86rem;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand">Data <span>&amp;</span> Apps</div>
+    <nav>
+      <ul>
+        <li><a href="#monitoring">Monitoreo</a></li>
+        <li><a href="#access">Acceso</a></li>
+        <li><a href="#scanning">Escaneo</a></li>
+        <li><a href="#management">Gestión</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker">Ecosistema de seguridad</div>
+    <h1>Adentro del edificio también hay reglas.</h1>
+    <p>Endpoint son los guardias, Network las cámaras, Identity and Access la recepción. Data and Apps son las cajas fuertes: cuatro dominios que vigilan, controlan, escanean y mantienen segura la información una vez ya se entró.</p>
+    <span class="tag">Panorama · 4 pilares · 1 ciclo</span>
+  </div>
+</section>
+
+<section class="pillar" id="monitoring">
+  <div class="wrap">
+    <div class="head"><span class="mono-num">01</span><h2>Data Monitoring</h2></div>
+    <p class="lede">Vigilancia continua y automatizada de quién toca un dato, cuándo y desde dónde. El sistema aprende qué es normal para cada usuario y alerta cuando algo se sale de esa línea base.</p>
+    <div class="cards">
+      <div class="card"><h3>Recolección de logs</h3><p>Cada acceso queda registrado: usuario, hora, IP, qué hizo.</p></div>
+      <div class="card"><h3>Línea base</h3><p>El sistema aprende el patrón normal de cada usuario.</p></div>
+      <div class="card"><h3>Detección de anomalías</h3><p>Un acceso fuera de patrón dispara una alerta automática.</p></div>
+      <div class="card"><h3>Respuesta</h3><p>La alerta bloquea la sesión o notifica a un analista.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="pillar" id="access">
+  <div class="wrap">
+    <div class="head"><span class="mono-num">02</span><h2>Data Access Control</h2></div>
+    <p class="lede">Decide quién puede hacer qué con cada dato, antes de que lo intente. El monitoreo vigila después; el control de acceso previene desde el inicio.</p>
+    <div class="cards">
+      <div class="card"><h3>RBAC</h3><p>Los permisos se asignan a roles, no a personas: admin, editor, analista.</p></div>
+      <div class="card"><h3>Cifrado</h3><p>En reposo y en tránsito, para que nadie intercepte lo que viaja por la red.</p></div>
+      <div class="card"><h3>Revisión periódica</h3><p>Cada cierto tiempo se revoca el acceso que ya no se necesita.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="pillar" id="scanning">
+  <div class="wrap">
+    <div class="head"><span class="mono-num">03</span><h2>Application Scanning</h2></div>
+    <p class="lede">Analiza el código y el comportamiento de una aplicación para hallar vulnerabilidades antes de que sean explotadas.</p>
+    <div class="cards">
+      <div class="card"><h3>SAST</h3><p>Revisa el código fuente sin ejecutarlo, buscando patrones peligrosos.</p></div>
+      <div class="card"><h3>DAST</h3><p>Ejecuta y "ataca" la app de forma controlada para ver cómo responde.</p></div>
+      <div class="card"><h3>OWASP ZAP</h3><p>Herramienta que se integra al pipeline y puede bloquear un despliegue inseguro.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="pillar" id="management">
+  <div class="wrap">
+    <div class="head"><span class="mono-num">04</span><h2>App Security Management</h2></div>
+    <p class="lede">Administración continua de la seguridad en producción: parches, configuración y dependencias que hay que mantener al día siempre.</p>
+    <div class="cards">
+      <div class="card"><h3>Parches y dependencias</h3><p>Saber qué librerías usa la app y actualizarlas rápido.</p></div>
+      <div class="card"><h3>Configuración segura</h3><p>Cabeceras HTTP que evitan que un atacante intercepte la conexión.</p></div>
+      <div class="card"><h3>Cumplimiento</h3><p>Seguir estándares como OWASP Top 10 de forma permanente.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cycle">
+  <div class="wrap">
+    <h2>Un ciclo, no piezas sueltas</h2>
+    <p>Scanning encuentra una falla → Security Management decide cómo corregirla. Access Control define quién toca qué dato → Monitoring vigila que nadie se salte esa regla.</p>
+    <div class="flow">
+      <span class="step">Scanning</span><span class="sep">→</span>
+      <span class="step">Security Management</span><span class="sep">→</span>
+      <span class="step">Access Control</span><span class="sep">→</span>
+      <span class="step">Monitoring</span>
+    </div>
+  </div>
+</section>
+
+<section class="cycle" id="contacto">
+  <div class="wrap">
+    <h2>Contacto</h2>
+    <p>Escríbenos si quieres el detalle técnico de cada dominio.</p>
+    <form class="contact" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Enviado';">
+      <input type="text" placeholder="Nombre" required>
+      <input type="email" placeholder="Correo" required>
+      <textarea placeholder="Mensaje" rows="4"></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Data &amp; Apps — Ecosistema de Seguridad · Sitio de demostración
+  </div>
+</footer>
+
+</body>
+</html>
