@@ -6,7 +6,7 @@ on:
       target_url:
         description: "URL del sitio desplegado en Vercel a escanear"
         required: true
-        default: "https://auditoria-flame.vercel.app"
+        default: "https://battlecityk.ai.studio/"
   push:
     branches: [main]
 
@@ -27,7 +27,7 @@ jobs:
         uses: zaproxy/action-baseline@v0.12.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          target: ${{ github.event.inputs.target_url || 'https://auditoria-flame.vercel.app' }}
+          target: ${{ github.event.inputs.target_url || 'https://battlecityk.ai.studio/' }}
           cmd_options: "-a"
           allow_issue_writing: true
           fail_action: false
