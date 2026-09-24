@@ -1,0 +1,34 @@
+name: OWASP ZAP Baseline Scan
+
+# Se ejecuta manualmente desde la pestaña "Actions" de GitHub,
+# o automáticamente cada vez que hay push a main.
+# Corre en un runner de GitHub en la nube: no instala nada en tu máquina.
+on:
+  workflow_dispatch:
+    inputs:
+      target_url:
+        description: "URL del sitio desplegado en Vercel a escanear"
+        required: true
+        default: "https://TU-PROYECTO.vercel.app"
+  push:
+    branches: [main]
+
+jobs:
+  zap_scan:
+    runs-on: ubuntu-latest
+    name: Escaneo ZAP Baseline
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+
+      - name: Ejecutar ZAP Baseline Scan
+        uses: zaproxy/action-baseline@v0.12.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          target: ${{ github.event.inputs.target_url || 'https://TU-PROYECTO.vercel.app' }}
+          cmd_options: "-a"
+          allow_issue_writing: true
+          fail_action: false
