@@ -1,8 +1,5 @@
 name: OWASP ZAP Baseline Scan
 
-# Se ejecuta manualmente desde la pestaña "Actions" de GitHub,
-# o automáticamente cada vez que hay push a main.
-# Corre en un runner de GitHub en la nube: no instala nada en tu máquina.
 on:
   workflow_dispatch:
     inputs:
@@ -25,6 +22,8 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Ejecutar ZAP Baseline Scan
+        id: zap_scan
+        continue-on-error: true
         uses: zaproxy/action-baseline@v0.12.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -32,3 +31,14 @@ jobs:
           cmd_options: "-a"
           allow_issue_writing: true
           fail_action: false
+
+      - name: Subir reporte como artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: zap-report
+          path: |
+            report_html.html
+            report_md.md
+            report_json.json
+          if-no-files-found: warn
