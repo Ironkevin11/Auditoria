@@ -31,8 +31,3 @@ El workflow `.github/workflows/zap-scan.yml` usa la Action oficial `zaproxy/acti
 4. Cuando termina (2-5 min):
    - El reporte queda como **artifact** descargable (`zap_scan` → contiene `report_html.html`, `report_md.md`, `report_json.json`) en la misma corrida del workflow.
    - Además, si el escaneo encuentra alertas, ZAP abre/actualiza automáticamente un **Issue** en el repo con el detalle.
-
-## 4. Para la entrega del viernes
-
-- Descarga el `report_html.html` del artifact — es el reporte formal de ZAP con las alertas encontradas (severidad, descripción, cómo se explota, cómo mitigarlo).
-- Puedes complementarlo explicando: qué probó ZAP (cabeceras de seguridad, cookies, XSS reflejado, etc.), cuáles alertas son reales riesgos para este sitio estático y cuáles no aplican por no tener backend.
